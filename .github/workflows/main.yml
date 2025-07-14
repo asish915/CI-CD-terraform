@@ -36,18 +36,18 @@ jobs:
     # give here docker hub user-name
     - name: Build Docker Image
       run: |
-        docker build -t asish915/CI-CD-terraform:${{ env.VERSION }} . 
+        docker build -t asish915/ci-cd-terraform:${{ env.VERSION }} . 
 
     # Push the Docker Image
     - name: Push Docker Image
       run: |
-        docker push asish915/CI-CD-terraform:${{ env.VERSION }}
+        docker push asish915/ci-cd-terraform:${{ env.VERSION }}
 
     # UPdate the K8s Manifest Files
     - name: Update K8s Manifests
       run: |
         cat deploy/deployment.yaml
-        sed -i "s|image: asish915/CI-CD-terraform:.*|image: asish915/CI-CD-terraform:${{ env.VERSION }}|g" deploy/deployment.yaml
+        sed -i "s|image: asish915/ci-cd-terraform:.*|image: asish915/ci-cd-terraform:${{ env.VERSION }}|g" deploy/deployment.yaml
         cat deploy/deployment.yaml
 
     # tfsec scanning
