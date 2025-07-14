@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: CI-CD-terraform
-        image: asish915/CI-CD-terraform:v1
+        image: asish915/ci-cd-terraform:v1
         ports:
         - containerPort: 80
