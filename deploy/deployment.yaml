@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: CI/CD-deployment
+  namespace: default
+  labels:
+    app: devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops
+  template:
+    metadata:
+      labels:
+        app: devops
+    spec:
+      containers:
+      - name: CI-CD-terraform
+        image: asish915/CI-CD-terraform:v1
+        ports:
+        - containerPort: 80
