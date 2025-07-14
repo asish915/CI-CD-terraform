@@ -1,0 +1,11 @@
+variable "connection_name" {}
+variable "bucket_name" {}
+variable "pipeline_name" {}
+variable "role_arn" {}
+variable "connection_arn" {}
+variable "repo" {}
+variable "branch" {}
+variable "build_project_name" {}
+variable "project_name" {}
+variable "service_role_arn" {}
+variable "repo_url" {}
